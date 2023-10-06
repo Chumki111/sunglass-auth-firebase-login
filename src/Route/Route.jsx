@@ -11,6 +11,7 @@ import ErrorPage from "../Pages/Error/ErrorPage";
 import Login from "../Components/Path/Login";
 import Register from "../Components/Path/Register";
 import SingleCard from "../Components/SingleCard";
+import PrivetRoute from "./PrivetRoute";
 
 const myCreatedRoute = createBrowserRouter([
     {
@@ -25,7 +26,7 @@ const myCreatedRoute = createBrowserRouter([
         },
         {
           path:'/sunglasses/:id',
-          element:<SingleCard></SingleCard>,
+          element:<PrivetRoute><SingleCard></SingleCard></PrivetRoute>,
           loader : () => fetch('/data.json')
         },
         {
